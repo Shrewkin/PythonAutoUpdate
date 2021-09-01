@@ -1,10 +1,17 @@
 from subprocess import Popen
+import subprocess
 import mainscript
+import requests
+from os import getcwd
 import time
 
 starttime = time.time()
 
 interval = 1
+
+label = subprocess.check_output(["git", "describe"]).strip()
+
+print(label)
 
 while True:
     mainscript.test()
