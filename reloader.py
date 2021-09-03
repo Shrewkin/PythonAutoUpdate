@@ -1,12 +1,12 @@
 from os import popen
-from shutil import copy2, rmtree
+from shutil import copy2, rmtree, copyfile
 from sys import exit
 from subprocess import Popen
+import logging
 
-print("Reloader as started")
+logging.warning("INFO: Reloader has started")
 
-copy2("PythonAutoUpdate\\LatestBuild\\mainscript.py", "PythonAutoUpdate")
+Popen("python3 main.py", shell=True)
 
-Popen("C:/Users/Striz/AppData/Local/Programs/Python/Python38/python.exe PythonAutoUpdate\\main.py", shell=True)
-
+logging.warning("INFO: Reloader has finished...")
 exit("Exiting to restart the main program")
